@@ -1,4 +1,4 @@
-# Repocheep <small>a reprepro python wrapper</small>
+# Repocheep _a reprepro python wrapper_
 
 ![](https://raw.github.com/andrewbunday/repocheep/master/icon.png)
 
