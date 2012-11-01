@@ -1,17 +1,17 @@
 # Repocheep <small>a reprepro python wrapper</small>
 
-![](/home/andrew.bunday/Dropbox/Projects/Repocheep/for_github/icon.png)
+![](https://raw.github.com/andrewbunday/repocheep/master/icon.png)
 
 ## What's it For?
 
 Repocheep is designed to be a pretty light weight Python wrapper onto the command line tool [Reprepro](http://mirrorer.alioth.debian.org/).
 
-Reprepo can be used to build and manage a local repositories, one of which we use internally to host software and tools which we deploy onto our production hosts. 
+Reprepo can be used to build and manage a local repositories, one of which we use internally to host software and tools which we deploy onto our production hosts.
 
 Our internal build chain is built using bash and python, and for programatic access to reprepro we wanted to have a python module which would handle:
 
 * Subprocess handling, communication and return codes.
-* Add additional queries to the repository which cannot be accessed solely through 
+* Add additional queries to the repository which cannot be accessed solely through
   reprepro.
 * Generate consistant data structures which we could use in other projects.
 
@@ -37,33 +37,33 @@ codenames = repository.list_dists()
 
 List each of the distributions in the repository. Returns a list of dicts() containing the codenames of the distributions().
 
-   
-```python 
+
+```python
 components = repository.list_components(codename)
 ```
 
 List each of the components in the repository for a given distribution's codename. Returns a list of dicts().
 
- 
+
 ```python
 archs = repository.list_architectures(codename)
-```   
+```
 
 List each of the architectures in the repository for a given distribution's codename. Returns a list of dicts() containing the component name and codename.
- 
+
 
 #### Listing Packages
 
 ```python
 packages = repository.ls(package_name)
-```	
+```
 
 Returns a list of _all_ of the versions of a given package found across all of the distributions in the repository.
 
 
  ```python
  packages = repository.list(codename, package_name=None)
- ```  
+ ```
 
 Returns a list of all of the matching packages within a given distribtion. If no package name is given it will return all of the packages in the distribution. This can be used with .list_dists() to find all of the packages in the repository.
 
@@ -81,7 +81,7 @@ Returns a list of all of the packages currently referenced by a  codename/compon
 
 ```python
 changelog = repository.list_changes(debfile)
-```   
+```
 
 Uses `debian_bundle.DebFile` to extract the changelog from the debfile. __WARNING__ - this method is blocking and can take a long time to return depending on the size of the archive.
 
